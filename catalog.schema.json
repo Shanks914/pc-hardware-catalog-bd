@@ -1,1 +1,107 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"PC Hardware Catalog BDT","type":"object","required":["schemaVersion","currency","components"],"properties":{"schemaVersion":{"const":1},"currency":{"const":"BDT"},"updatedAt":{"type":["string","null"],"format":"date-time"},"components":{"type":"array","items":{"type":"object","required":["id","type","name","priceBdt","currency","updatedAt","source"],"properties":{"id":{"type":"string","minLength":1},"type":{"enum":["CPU","GPU","Motherboard","RAM","Storage","PSU"]},"name":{"type":"string","minLength":1},"brand":{"type":"string"},"priceBdt":{"type":"number","minimum":0},"currency":{"const":"BDT"},"updatedAt":{"type":"string","format":"date-time"},"source":{"type":"string","format":"uri"},"socket":{"type":"string"},"tdp":{"type":"integer","minimum":0},"specs":{"type":"string"}}}}}}
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PC Hardware Catalog BDT",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "currency",
+    "components"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "currency": {
+      "const": "BDT"
+    },
+    "updatedAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "components": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "type",
+          "name",
+          "priceBdt",
+          "currency",
+          "updatedAt",
+          "source"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "type": {
+            "enum": [
+              "CPU",
+              "GPU",
+              "Motherboard",
+              "RAM",
+              "Storage",
+              "PSU"
+            ]
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "brand": {
+            "type": "string"
+          },
+          "priceBdt": {
+            "type": "number",
+            "minimum": 0
+          },
+          "currency": {
+            "const": "BDT"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "source": {
+            "type": "string",
+            "format": "uri"
+          },
+          "socket": {
+            "type": "string"
+          },
+          "tdp": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "specs": {
+            "type": "string"
+          },
+          "priceIsEstimate": {
+            "type": "boolean",
+            "description": "True when priceBdt is illustrative rather than a verified retailer price."
+          },
+          "isDemoEntry": {
+            "type": "boolean",
+            "description": "True for illustrative catalog entries that should be verified before purchase."
+          }
+        }
+      }
+    },
+    "priceBasis": {
+      "type": "string",
+      "description": "Explains the price source or estimation method used by this catalog."
+    },
+    "dataNotes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
+
